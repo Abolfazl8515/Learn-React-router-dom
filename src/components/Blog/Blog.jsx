@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 
-const Blog = (props) => {
-  const id = props.match.params.id;
+const Blog = ({ match, location }) => {
+  const id = match.params.id;
+  console.log(location.search);
   return (
     <div>
       <h3>blog {id}</h3>

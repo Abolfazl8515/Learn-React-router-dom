@@ -8,8 +8,8 @@ function App() {
     <div className="App">
       <Layout>
         <Switch>
-          {routes.map((r) => (
-            <Route {...r} />
+          {routes.map((r,index) => (
+            <Route {...r} key={index} />
           ))}
         </Switch>
       </Layout>

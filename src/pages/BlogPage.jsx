@@ -13,7 +13,9 @@ const BlogPage = () => {
       <ul>
         {items.map((i) => (
           <li key={i.to}>
-            <Link to={i.to}>{i.name}</Link>
+            <Link to={{ pathname: i.to, search: "name=abolfazl" }}>
+              {i.name}
+            </Link>
           </li>
         ))}
       </ul>
