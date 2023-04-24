@@ -1,7 +1,7 @@
-import { Link, withRouter } from "react-router-dom";
+import { withRouter, NavLink } from "react-router-dom";
 
 const items = [
-  { name: "Home page", to: "/" },
+  { name: "Home page", to: "/", exact: true },
   { name: "about us page", to: "/about-us" },
   { name: "blogs", to: "/blogs" },
   { name: "post", to: "/post" },
@@ -13,9 +13,15 @@ const Navigation = () => {
     <header>
       <nav>
         <ul>
-          {items.map((i) => (
-            <li key={i.to}>
-              <Link to={i.to}>{i.name}</Link>
+          {items.map((i, index) => (
+            <li key={index}>
+              <NavLink
+                to={i.to}
+                activeClassName="activeNav"
+                exact={i.exact || false}
+              >
+                {i.name}
+              </NavLink>
             </li>
           ))}
         </ul>
