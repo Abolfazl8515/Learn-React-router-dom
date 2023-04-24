@@ -9,7 +9,7 @@ function App() {
       <Layout>
         <Switch>
           {routes.map((r) => (
-            <Route {...r} />
+            <Route {...r} key={r.component} />
           ))}
         </Switch>
       </Layout>

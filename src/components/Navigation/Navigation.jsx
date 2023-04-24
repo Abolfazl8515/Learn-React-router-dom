@@ -1,16 +1,21 @@
 import { Link, withRouter } from "react-router-dom";
 
+const items = [
+  { name: "Home page", to: "/" },
+  { name: "about us page", to: "/about-us" },
+  { name: "blogs", to: "/blogs" },
+];
+
 const Navigation = () => {
   return (
     <header>
       <nav>
         <ul>
-          <li>
-            <Link to="/">Home page</Link>
-          </li>
-          <li>
-            <Link to="/about-us">about us page</Link>
-          </li>
+          {items.map((i) => (
+            <li key={i.to}>
+              <Link to={i.to}>{i.name}</Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>
